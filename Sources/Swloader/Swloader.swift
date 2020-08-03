@@ -52,7 +52,7 @@ public struct Loader: ViewModifier {
                     AnimationView()
                 } else {
                     Image(systemName: icon)
-                        .resizable()
+                        .font(.system(size: 92))
                         .frame(width: 112, height: 112)
                         .foregroundColor(.gray)
                 }
