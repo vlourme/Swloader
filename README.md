@@ -4,7 +4,7 @@
 ## Screenshots
 | Loader | Loader with legend | Icon with legend | 
 |:------:|:------------------:|:----------------:|
-| ![Loader](media/Loader.gif) | ![Loader](media/LoaderWithLegend.gif) | ![Loader](media/iconWithLegend.gif)
+| ![Loader](media/Loader.gif) | ![Loader](media/LoaderWithLegend.gif) | ![Loader](media/IconWithLegend.gif)
 
 ## Installation
 Swloader can be installed using Swift Package Manager. In Xcode, go in `File` > `Swift Packages` > `Add Package Depencency...`.
