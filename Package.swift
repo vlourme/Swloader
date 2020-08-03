@@ -21,8 +21,5 @@ let package = Package(
         .target(
             name: "Swloader",
             dependencies: []),
-        .testTarget(
-            name: "SwloaderTests",
-            dependencies: ["Swloader"]),
     ]
 )
