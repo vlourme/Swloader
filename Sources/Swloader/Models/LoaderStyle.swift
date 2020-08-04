@@ -16,8 +16,9 @@ public enum LoaderStyle {
     /// - parameters:
     ///     - title: Optional, this displays a title
     ///     - legend: Optional, this displays a small legend
+    ///     - duration: Optional, change the rotation speed
     ///
-    case `default`(_ title: String = "", legend: String = "")
+    case `default`(_ title: String = "", legend: String = "", duration: Double = 1)
     
     ///
     /// This shows a static and non-animated icon
@@ -25,15 +26,17 @@ public enum LoaderStyle {
     ///     - icon: Required, this shows the icon (SF Symbol)
     ///     - title: Optional, this displays a title
     ///     - legend: Optional, this displays a small legend
+    ///     - spinning: Optional, this makes the icon spin
+    ///     - speed: Optional, change the rotation speed
     ///
-    case icon(_ icon: String, title: String = "", legend: String = "", spinning: Bool = false)
+    case icon(_ icon: String, title: String = "", legend: String = "", spinning: Bool = false, speed: Double = 1)
     
     // Get the title
     var title: String {
         get {
             switch(self) {
-                case let .default(title, _),
-                     let .icon(_, title, _, _):
+                case let .default(title, _, _),
+                     let .icon(_, title, _, _, _):
                     return title
             }
         }
@@ -43,9 +46,20 @@ public enum LoaderStyle {
     var legend: String {
         get {
             switch(self) {
-                case let .default(_, legend),
-                     let .icon(_, _, legend, _):
+                case let .default(_, legend, _),
+                     let .icon(_, _, legend, _, _):
                     return legend
+            }
+        }
+    }
+    
+    // Get spinning speed
+    var speed: Double {
+        get {
+            switch(self) {
+                case let .default(_, _, speed),
+                     let .icon(_, _, _, _, speed):
+                    return speed
             }
         }
     }
@@ -54,7 +68,7 @@ public enum LoaderStyle {
     var icon: String {
         get {
             switch(self) {
-                case let .icon(icon, _, _, _):
+                case let .icon(icon, _, _, _, _):
                     return icon
                 
                 default:
@@ -67,7 +81,7 @@ public enum LoaderStyle {
     var isSpinning: Bool {
         get {
             switch(self) {
-                case let .icon(_, _, _, spinning):
+                case let .icon(_, _, _, spinning, _):
                     return spinning
                 
                 default:

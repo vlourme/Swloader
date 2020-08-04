@@ -26,9 +26,9 @@ public struct Loader: ViewModifier {
             
             VStack {
                 if style.icon.isEmpty {
-                    CircleView()
+                    CircleView(duration: style.speed)
                 } else {
-                    IconView(icon: style.icon, animate: style.isSpinning)
+                    IconView(icon: style.icon, duration: style.speed, animate: style.isSpinning)
                 }
                 
                 Group {
