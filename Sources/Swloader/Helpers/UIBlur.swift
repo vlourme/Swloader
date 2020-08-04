@@ -1,6 +1,6 @@
 //
 //  UIBlur.swift
-//  
+//  UIKit based blur effect for background
 //
 //  Created by Victor Lourme on 03/08/2020.
 //
