@@ -1,6 +1,6 @@
 //
 //  Swloader.swift
-//
+//  Main file
 //
 //  Created by Victor Lourme on 03/08/2020.
 //
@@ -32,14 +32,19 @@ public struct AnimationView: View {
 
 ///
 /// Loader modifier
-/// - parameters:
-///     - label: Displays a text/legend
-///     - icon: Displays a icon instead of a circle effect
 ///
 @available(iOS 13.0, *)
 public struct Loader: ViewModifier {
+    // isPresented -> Displays animation when true
     @Binding public var isPresented: Bool
+    
+    // title -> Displays a title when filled
+    @State public var title: String = ""
+    
+    // label -> Displays a legend when filled
     @State public var label: String = ""
+    
+    // icon -> Displays an icon instead of animation when filled
     @State public var icon: String = ""
     
     var loader: some View {
@@ -57,12 +62,20 @@ public struct Loader: ViewModifier {
                         .foregroundColor(.gray)
                 }
                 
-                if !label.isEmpty {
-                    Text(label)
-                        .font(.footnote)
-                        .multilineTextAlignment(.center)
-                        .padding(.top)
-                }
+                Group {
+                    if !title.isEmpty {
+                        Text(title)
+                            .font(.headline)
+                            .multilineTextAlignment(.center)
+                            .padding(.top)
+                    }
+                    
+                    if !label.isEmpty {
+                        Text(label)
+                            .font(.footnote)
+                            .multilineTextAlignment(.center)
+                    }
+                }.padding([.leading, .trailing])
             }
         }
         .frame(minWidth: 200, idealWidth: 220, maxWidth: 250, minHeight: 200, idealHeight: 220, maxHeight: 250)
@@ -90,12 +103,14 @@ public extension View {
     /// Show a loader on top of the view
     /// - parameters:
     ///     - isPresented: If true, it will display the loader
+    ///     - title: Optional, this displays a title
     ///     - label: Optional, this displays a legend
     ///     - icon: Optional, this displays an icon instead of a loader animation
     ///
     func showLoader(isPresented: Binding<Bool>,
+                    title: String = "",
                     label: String = "",
                     icon: String = "") -> some View {
-        return self.modifier(Loader(isPresented: isPresented, label: label, icon: icon))
+        return self.modifier(Loader(isPresented: isPresented, title: title, label: label, icon: icon))
     }
 }
