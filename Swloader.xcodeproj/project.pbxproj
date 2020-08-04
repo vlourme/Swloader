@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1B9B983D24D9427C004867E2 /* LoaderStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1B9B983C24D9427C004867E2 /* LoaderStyle.swift */; };
+		1BD1643924D94F050030B00D /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1643824D94F050030B00D /* CircleView.swift */; };
+		1BD1643B24D94F290030B00D /* IconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1BD1643A24D94F290030B00D /* IconView.swift */; };
 		OBJ_21 /* UIBlur.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_10 /* UIBlur.swift */; };
 		OBJ_22 /* Swloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_11 /* Swloader.swift */; };
 		OBJ_29 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = OBJ_6 /* Package.swift */; };
@@ -15,6 +17,8 @@
 
 /* Begin PBXFileReference section */
 		1B9B983C24D9427C004867E2 /* LoaderStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoaderStyle.swift; sourceTree = "<group>"; };
+		1BD1643824D94F050030B00D /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
+		1BD1643A24D94F290030B00D /* IconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IconView.swift; sourceTree = "<group>"; };
 		OBJ_10 /* UIBlur.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBlur.swift; sourceTree = "<group>"; };
 		OBJ_11 /* Swloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swloader.swift; sourceTree = "<group>"; };
 		OBJ_15 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -41,6 +45,15 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		1BD1643124D94EB40030B00D /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				1BD1643824D94F050030B00D /* CircleView.swift */,
+				1BD1643A24D94F290030B00D /* IconView.swift */,
+			);
+			path = Animations;
+			sourceTree = "<group>";
+		};
 		OBJ_12 /* Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -56,7 +69,7 @@
 			name = Products;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
-		OBJ_5 /*  */ = {
+		OBJ_5 = {
 			isa = PBXGroup;
 			children = (
 				OBJ_6 /* Package.swift */,
@@ -65,7 +78,6 @@
 				OBJ_13 /* Products */,
 				OBJ_15 /* README.md */,
 			);
-			name = "";
 			sourceTree = "<group>";
 		};
 		OBJ_7 /* Sources */ = {
@@ -79,6 +91,7 @@
 		OBJ_8 /* Swloader */ = {
 			isa = PBXGroup;
 			children = (
+				1BD1643124D94EB40030B00D /* Animations */,
 				1B9B983B24D9425B004867E2 /* Models */,
 				OBJ_9 /* Helpers */,
 				OBJ_11 /* Swloader.swift */,
@@ -144,7 +157,7 @@
 			knownRegions = (
 				en,
 			);
-			mainGroup = OBJ_5 /*  */;
+			mainGroup = OBJ_5;
 			productRefGroup = OBJ_13 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -160,6 +173,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 0;
 			files = (
+				1BD1643B24D94F290030B00D /* IconView.swift in Sources */,
+				1BD1643924D94F050030B00D /* CircleView.swift in Sources */,
 				1B9B983D24D9427C004867E2 /* LoaderStyle.swift in Sources */,
 				OBJ_21 /* UIBlur.swift in Sources */,
 				OBJ_22 /* Swloader.swift in Sources */,
