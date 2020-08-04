@@ -39,13 +39,7 @@ public struct Loader: ViewModifier {
     @Binding public var isPresented: Bool
     
     // title -> Displays a title when filled
-    @State public var title: String = ""
-    
-    // label -> Displays a legend when filled
-    @State public var label: String = ""
-    
-    // icon -> Displays an icon instead of animation when filled
-    @State public var icon: String = ""
+    @State public var style: LoaderStyle = .default()
     
     var loader: some View {
         ZStack {
@@ -53,25 +47,25 @@ public struct Loader: ViewModifier {
                 .cornerRadius(10)
             
             VStack {
-                if icon.isEmpty {
+                if style.icon.isEmpty {
                     AnimationView()
                 } else {
-                    Image(systemName: icon)
+                    Image(systemName: style.icon)
                         .font(.system(size: 92))
                         .frame(width: 112, height: 112)
                         .foregroundColor(.gray)
                 }
                 
                 Group {
-                    if !title.isEmpty {
-                        Text(title)
+                    if !style.title.isEmpty {
+                        Text(style.title)
                             .font(.headline)
                             .multilineTextAlignment(.center)
                             .padding(.top)
                     }
                     
-                    if !label.isEmpty {
-                        Text(label)
+                    if !style.legend.isEmpty {
+                        Text(style.legend)
                             .font(.footnote)
                             .multilineTextAlignment(.center)
                     }
@@ -103,14 +97,9 @@ public extension View {
     /// Show a loader on top of the view
     /// - parameters:
     ///     - isPresented: If true, it will display the loader
-    ///     - title: Optional, this displays a title
-    ///     - label: Optional, this displays a legend
-    ///     - icon: Optional, this displays an icon instead of a loader animation
+    ///     - style: LoaderStyle, defaults to spinning circle
     ///
-    func loader(isPresented: Binding<Bool>,
-                    title: String = "",
-                    label: String = "",
-                    icon: String = "") -> some View {
-        return self.modifier(Loader(isPresented: isPresented, title: title, label: label, icon: icon))
+    func loader(isPresented: Binding<Bool>, style: LoaderStyle = .default()) -> some View {
+        return self.modifier(Loader(isPresented: isPresented, style: style))
     }
 }
