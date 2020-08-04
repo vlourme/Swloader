@@ -19,7 +19,7 @@ public struct AnimationView: View {
         ZStack {
             Circle()
                 .trim(from: 0, to: 0.80)
-                .stroke(Color.gray, lineWidth: 6)
+                .stroke(Color.gray, style: StrokeStyle(lineWidth: 6, lineCap: .round, lineJoin: .round))
                 .frame(width: 112, height: 112)
                 .rotationEffect(Angle(degrees: animate ? 360 : 0))
                 .animation(Animation.linear(duration: 1).repeatForever(autoreverses: false))
