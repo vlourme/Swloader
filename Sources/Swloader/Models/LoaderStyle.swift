@@ -26,14 +26,14 @@ public enum LoaderStyle {
     ///     - title: Optional, this displays a title
     ///     - legend: Optional, this displays a small legend
     ///
-    case icon(_ icon: String, title: String = "", legend: String = "")
+    case icon(_ icon: String, title: String = "", legend: String = "", spinning: Bool = false)
     
     // Get the title
     var title: String {
         get {
             switch(self) {
                 case let .default(title, _),
-                     let .icon(_, title, _):
+                     let .icon(_, title, _, _):
                     return title
             }
         }
@@ -44,7 +44,7 @@ public enum LoaderStyle {
         get {
             switch(self) {
                 case let .default(_, legend),
-                     let .icon(_, _, legend):
+                     let .icon(_, _, legend, _):
                     return legend
             }
         }
@@ -54,11 +54,24 @@ public enum LoaderStyle {
     var icon: String {
         get {
             switch(self) {
-                case let .icon(icon, _, _):
+                case let .icon(icon, _, _, _):
                     return icon
                 
                 default:
                     return ""
+            }
+        }
+    }
+    
+    // Is spinning
+    var isSpinning: Bool {
+        get {
+            switch(self) {
+                case let .icon(_, _, _, spinning):
+                    return spinning
+                
+                default:
+                    return false
             }
         }
     }

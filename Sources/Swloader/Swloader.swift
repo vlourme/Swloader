@@ -28,7 +28,7 @@ public struct Loader: ViewModifier {
                 if style.icon.isEmpty {
                     CircleView()
                 } else {
-                    IconView(icon: style.icon)
+                    IconView(icon: style.icon, animate: style.isSpinning)
                 }
                 
                 Group {
