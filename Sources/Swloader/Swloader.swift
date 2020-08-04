@@ -65,7 +65,7 @@ public struct Loader: ViewModifier {
                 }
             }
         }
-        .frame(width: 200, height: 200)
+        .frame(minWidth: 200, idealWidth: 220, maxWidth: 250, minHeight: 200, idealHeight: 220, maxHeight: 250)
         .scaleEffect(isPresented ? 1 : 0)
         .animation(.easeInOut)
         .transition(.scale)
