@@ -68,6 +68,7 @@ public struct Loader: ViewModifier {
                         Text(style.legend)
                             .font(.footnote)
                             .multilineTextAlignment(.center)
+                            .padding(.top, style.title.isEmpty ? 15 : 0)
                     }
                 }.padding([.leading, .trailing])
             }
