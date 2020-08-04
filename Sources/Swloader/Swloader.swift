@@ -107,7 +107,7 @@ public extension View {
     ///     - label: Optional, this displays a legend
     ///     - icon: Optional, this displays an icon instead of a loader animation
     ///
-    func showLoader(isPresented: Binding<Bool>,
+    func loader(isPresented: Binding<Bool>,
                     title: String = "",
                     label: String = "",
                     icon: String = "") -> some View {
